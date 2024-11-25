@@ -1,0 +1,140 @@
+<article class="single {{post_class}}">
+
+    {{#match @page.show_title_and_feature_image}}
+        <header class="single-header gh-canvas">
+            {{#is "post"}}
+
+            <div class="single-meta">
+                <div class="single-meta-item single-meta-date">
+                    {{> "icons/calendar"}}
+                    <time datetime="{{date format='YYYY-MM-DD'}}">
+                        {{date published_at}}
+                    </time>
+                </div>
+                {{#if reading_time}}
+                    <div class="single-meta-item single-meta-length">
+                        {{> "icons/clock"}}
+                        {{reading_time}}
+                    </div>
+                {{/if}}
+                {{#primary_tag}}
+                    <div class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-{{slug}}" href="{{url}}">
+                            {{name}}
+                        </a>
+                    </div>
+                {{/primary_tag}}
+            </div>
+            {{/is}}
+
+            <h1 class="single-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <div class="single-excerpt">
+                    {{custom_excerpt}}
+                </div>
+            {{/if}}
+
+            {{#if feature_image}}
+            {{#unless no_image}}
+                <figure class="single-media kg-width-{{width}}">
+                    <div class="u-placeholder horizontal">
+                        <img
+                            class="u-object-fit"
+                            srcset="{{> srcset}}"
+                            sizes="(min-width: 1200px) 920px, 92vw"
+                            src="{{img_url feature_image size="l"}}"
+                            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        >
+                    </div>
+
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/unless}}
+            {{/if}}
+        </header>
+    {{/match}}
+
+    <div class="single-content gh-content gh-canvas">
+        {{content}}
+    </div>
+
+    {{#is "post"}}
+
+<div class="single-navigation-wrapper gh-canvas">
+    <div class="single-footer-navigation">
+        <div class="gh-readmore-wrap-left">
+            {{#prev_post}}
+                <a href="{{url}}" class="gh-readmore-link" aria-label="Read previous article">
+                    <img src="{{#if feature_image}}{{img_url feature_image size="s"}}{{/if}}" 
+                         class="gh-readmore-thumb" 
+                         alt="{{title}}">
+                    <span class="gh-readmore-title-left">{{title}}</span>
+                </a>
+            {{/prev_post}}
+        </div>
+
+        <div class="gh-readmore-wrap-right">
+            {{#next_post}}
+                <a href="{{url}}" class="gh-readmore-link" aria-label="Read next article">
+                    <span class="gh-readmore-title-right">{{title}}</span>
+                    <img src="{{#if feature_image}}{{img_url feature_image size="s"}}{{/if}}" 
+                         class="gh-readmore-thumb" 
+                         alt="{{title}}">
+                </a>
+            {{/next_post}}
+        </div>
+    </div>
+</div>
+
+    <div class="gh-canvas">
+        <footer class="single-footer">
+            <div class="single-footer-middle">
+                {{#if @custom.show_author}}
+                    <div class="single-footer-top">
+                        <h3 class="single-footer-title">{{t "About the Author"}}</h3>
+                        {{#foreach authors}}
+                        <div class="anor_fn_author_info">
+                            <div class="info_img">
+                                <a href="{{url}}">
+                                    <img src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                                </a>
+                            </div>
+                            <div class="info_desc">
+                                <h3 class="fn_title">
+                                    <a href="{{url}}">{{name}}</a>
+                                </h3>
+                                <p class="fn_desc">
+                                    {{#if bio}}
+                                        {{bio}}
+                                    {{else}}
+                                        {{t "This author has not provided a bio yet."}}
+                                    {{/if}}
+                                </p>
+                            <div class="share author-social">
+                                {{#if facebook}}
+                                    <a class="share-link share-link-facebook author-social-item" href="https://www.facebook.com/{{facebook}}" target="_blank" rel="noopener noreferrer">
+                                        {{> "icons/facebook"}}
+                                        Facebook
+                                    </a>
+                                {{/if}}
+                                {{#if twitter}}
+                                    <a class="share-link share-link-twitter author-social-item" href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
+                                        {{> "icons/twitter"}}
+                                        Twitter
+                                    </a>
+                                {{/if}}
+                            </div>
+                            </div>
+                        </div>
+                        {{/foreach}}
+                    </div>
+                {{/if}}
+            </div>
+        </footer>
+    </div>
+    {{/is}}
+
+</article>

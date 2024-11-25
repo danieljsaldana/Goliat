@@ -1,0 +1,25 @@
+<article class="gh-list-post">
+    <a href="{{url}}">
+        <img src="{{feature_image}}" class="gh-list-post-thumb" alt="{{title}}" loading="lazy">
+    </a>
+    <div class="gh-list-post-content">
+        <h2 class="gh-list-post-title">
+            <a href="{{url}}">
+                {{title}}
+            </a>
+        </h2>
+        <div class="gh-list-post-info">
+            {{#if primary_tag}}
+                <div class="post-category">
+                    <a href="/tag/{{primary_tag.slug}}" title="{{primary_tag.name}}" class="category-link">
+                        {{primary_tag.name}}
+                    </a>
+                </div>
+            {{/if}}
+                {{#unless access}}
+                    {{> "icons/lock"}}
+                {{/unless}}            
+            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+        </div>
+    </div>
+</article>

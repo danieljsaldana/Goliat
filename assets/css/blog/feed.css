@@ -1,0 +1,125 @@
+.gh-list-post {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gh-list-post-thumb {
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    border: 1px solid var(--lighter-gray-color);
+    border-radius: 10px;
+}
+
+.gh-list-post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.gh-list-post-title {
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin: 0;
+    line-height: 1.3;  
+}
+
+.gh-list-post-title a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.gh-list-post-title svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--secondary-text-color);
+}
+
+.gh-list-post-title a:hover svg {
+    fill: var(--accent-color);
+}
+
+.gh-list-post-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+
+.post-category {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3em 0.7em;
+    text-transform: uppercase;
+    z-index: 2;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post-category .category-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .gh-list-post {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .gh-list-post-thumb {
+        width: 70px;
+        height: 70px;
+    }
+
+    .gh-list-post-title {
+        font-size: 2rem;
+    }
+
+    .gh-list-post-info {
+        font-size: 12px;
+    }
+
+    .post-category {
+        font-size: 0.75rem;
+        padding: 0.2em 0.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .gh-list-post {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .gh-list-post-thumb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .gh-list-post-content {
+        gap: 6px;
+    }
+
+    .gh-list-post-title {
+        font-size: 1.8rem;
+    }
+
+    .gh-list-post-info {
+        font-size: 11px;
+    }
+}

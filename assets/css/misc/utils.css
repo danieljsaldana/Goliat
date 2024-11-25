@@ -1,0 +1,233 @@
+.u-permalink {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    outline: none;
+}
+
+.u-placeholder {
+    position: relative;
+    z-index: 10;
+    background-color: var(--lighter-gray-color);
+    border: 1px solid var(--lighter-gray-color);
+    border-radius: 10px;
+}
+
+.u-placeholder::before {
+    display: block;
+}
+
+.u-placeholder.horizontal::before {
+    padding-bottom: 50%;
+}
+
+.u-placeholder.rectangle::before {
+    padding-bottom: 62.5%;
+}
+
+.u-placeholder.square::before {
+    padding-bottom: 100%;
+}
+
+.u-object-fit {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    border: 1px solid var(--lighter-gray-color);
+}
+
+.post-title {
+    color: var(--primary-color);
+}
+
+.gh-canvas {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.single-navigation-wrapper {
+    padding: 20px;
+}
+
+.single-footer-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-link {
+    color: var(--heading-color);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-link:hover {
+    color: var(--primary-color);
+}
+
+.icon.navigation-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.single-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--light-gray-color);
+}
+
+.single-footer-middle {
+    margin-top: 20px;
+}
+
+.single-footer-top {
+    padding: 20px;
+    background-color: var(--lighter-gray-color);
+    border-radius: 8px;
+}
+
+.single-footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+.anor_fn_author_info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.anor_fn_author_info .info_img {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.anor_fn_author_info .info_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray-color);
+    
+}
+
+.anor_fn_author_info .info_desc {
+    flex: 1;
+}
+
+.anor_fn_author_info .fn_title {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: var(--heading-color);
+}
+
+.anor_fn_author_info .fn_title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.anor_fn_author_info .fn_desc {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.anor_fn_author_info .social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.anor_fn_author_info .social li {
+    display: inline-block;
+}
+
+.anor_fn_author_info .social a {
+    color: #777;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.gh-readmore-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--heading-color);
+}
+
+.gh-readmore-wrap-left {
+    align-items: center;
+    max-width: 300px;
+}
+
+.gh-readmore-wrap-right {
+    align-items: center;
+    max-width: 300px;
+    flex-direction: row-reverse; 
+}
+
+.gh-readmore-thumb {
+    width: 90px; 
+    height: 90px; 
+    flex-shrink: 0; 
+    border-radius: 10px; 
+    object-fit: cover;
+    background-color: #f0f0f0;
+    border: 1px solid var(--light-gray-color);
+}
+
+.gh-readmore-title-left {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-left: 10px;
+    flex-grow: 1;
+    word-break: break-word;
+    text-align: left;
+}
+
+.gh-readmore-title-right {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-right: 10px;
+    flex-grow: 1;
+    word-break: break-word;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .anor_fn_author_info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .single-footer-title {
+        text-align: center;
+    }
+}

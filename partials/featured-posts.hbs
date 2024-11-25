@@ -1,0 +1,40 @@
+{{#get "posts" filter="featured:true" limit="all" include="tags,primary_tag" as |featured|}}
+{{#if featured}}
+    <div class="gh-outer">
+    <section class="featured-wrapper gh-inner">
+
+        {{#if @custom.featured_title}}
+            <h2 class="featured-title">{{@custom.featured_title}}</h2>
+        {{/if}}
+
+        <div class="featured-feed owl">
+        {{#foreach featured}}
+            <article class="{{post_class}}">
+                <div class="u-placeholder horizontal image-overlay">
+                    {{#if feature_image}}
+                        <img
+                            class="u-object-fit"
+                            srcset="{{> srcset}}"
+                            sizes="(min-width: 992px) calc((92vw - 60px) / 3), (min-width: 768px) calc((92vw - 30px) / 2), 92vw"
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{title}}"
+                        >
+                        {{#if primary_tag}}
+                            <div class="post-category">
+                                <a href="{{primary_tag.url}}" class="category-link">{{primary_tag.name}}</a>
+                            </div>
+                        {{/if}}
+                        <div class="overlay-content">
+                            <h3 class="post-title">{{title}}</h3>
+                        </div>
+                    {{/if}}
+                </div>
+                <a class="u-permalink" href={{url}} aria-label="{{title}}"></a>
+            </article>
+        {{/foreach}}
+        </div>
+
+    </section>
+    </div>
+{{/if}}
+{{/get}}
