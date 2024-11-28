@@ -12,13 +12,14 @@
                     </time>
                 </div>
                 {{#if reading_time}}
-                    <div class="single-meta-item single-meta-length">
+                    <div class="single-meta-item">
                         {{> "icons/clock"}}
                         {{reading_time}}
                     </div>
                 {{/if}}
                 {{#primary_tag}}
                     <div class="single-meta-item single-meta-tag">
+                        {{> "icons/tag"}}
                         <a class="post-tag post-tag-{{slug}}" href="{{url}}">
                             {{name}}
                         </a>
@@ -61,78 +62,113 @@
         {{content}}
     </div>
 
+    <div class="single-share gh-canvas">
+        <div class="share-container">
+            <p class="share-text">{{ t "Share this post"}}:</p>
+            <div class="share-buttons">
+                <a href="https://twitter.com/share?url={{url absolute="true"}}&text={{title}}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="share-icon share-twitter" 
+                aria-label="Share on Twitter">
+                    {{> "icons/twitter"}}
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="share-icon share-facebook" 
+                aria-label="Share on Facebook">
+                    {{> "icons/facebook"}}
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{title}}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="share-icon share-linkedin" 
+                aria-label="Share on LinkedIn">
+                    {{> "icons/linkedin"}}
+                </a>
+            </div>
+        </div>
+    </div>
+
     {{#is "post"}}
 
 <div class="single-navigation-wrapper gh-canvas">
-    <div class="single-footer-navigation">
+    <div class="single-footer-navigation single-footer">
         <div class="gh-readmore-wrap-left">
-            {{#prev_post}}
+            {{#next_post}}
                 <a href="{{url}}" class="gh-readmore-link" aria-label="Read previous article">
                     <img src="{{#if feature_image}}{{img_url feature_image size="s"}}{{/if}}" 
                          class="gh-readmore-thumb" 
                          alt="{{title}}">
                     <span class="gh-readmore-title-left">{{title}}</span>
                 </a>
-            {{/prev_post}}
+            {{/next_post}}
         </div>
 
         <div class="gh-readmore-wrap-right">
-            {{#next_post}}
+            {{#prev_post}}
                 <a href="{{url}}" class="gh-readmore-link" aria-label="Read next article">
                     <span class="gh-readmore-title-right">{{title}}</span>
                     <img src="{{#if feature_image}}{{img_url feature_image size="s"}}{{/if}}" 
                          class="gh-readmore-thumb" 
                          alt="{{title}}">
                 </a>
-            {{/next_post}}
+            {{/prev_post}}
         </div>
     </div>
 </div>
 
     <div class="gh-canvas">
-        <footer class="single-footer">
-            <div class="single-footer-middle">
-                {{#if @custom.show_author}}
-                    <div class="single-footer-top">
-                        <h3 class="single-footer-title">{{t "About the Author"}}</h3>
-                        {{#foreach authors}}
-                        <div class="anor_fn_author_info">
-                            <div class="info_img">
-                                <a href="{{url}}">
-                                    <img src="{{img_url profile_image size="m"}}" alt="{{name}}">
-                                </a>
-                            </div>
-                            <div class="info_desc">
-                                <h3 class="fn_title">
-                                    <a href="{{url}}">{{name}}</a>
-                                </h3>
-                                <p class="fn_desc">
-                                    {{#if bio}}
-                                        {{bio}}
-                                    {{else}}
-                                        {{t "This author has not provided a bio yet."}}
-                                    {{/if}}
-                                </p>
-                            <div class="share author-social">
-                                {{#if facebook}}
-                                    <a class="share-link share-link-facebook author-social-item" href="https://www.facebook.com/{{facebook}}" target="_blank" rel="noopener noreferrer">
-                                        {{> "icons/facebook"}}
-                                        Facebook
-                                    </a>
-                                {{/if}}
-                                {{#if twitter}}
-                                    <a class="share-link share-link-twitter author-social-item" href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
-                                        {{> "icons/twitter"}}
-                                        Twitter
-                                    </a>
-                                {{/if}}
-                            </div>
-                            </div>
+        <footer class="single-footer-middle">
+            {{#if @custom.show_author}}
+                <div class="single-footer-top">
+                    <h3 class="single-footer-title">{{t "About the Author"}}</h3>
+                    {{#foreach authors}}
+                    <div class="anor_fn_author_info">
+                        <div class="info_img">
+                            <a href="{{url}}">
+                                <img src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                            </a>
                         </div>
-                        {{/foreach}}
+                        <div class="info_desc">
+                            <h3 class="fn_title">
+                                <a href="{{url}}">{{name}}</a>
+                            </h3>
+                            <p class="fn_desc">
+                                {{#if bio}}
+                                    {{bio}}
+                                {{else}}
+                                    {{t "This author has not provided a bio yet."}}
+                                {{/if}}
+                            </p>
+                        <div class="share author-social">
+                            {{#if website}}
+                                <a class="share-link share-link-facebook author-social-item"
+                                href="{{website}}" target="_blank"
+                                rel="noopener noreferrer">
+                                    {{> "icons/website"}}
+                                    Website
+                                </a>
+                            {{/if}}
+
+                            {{#if facebook}}
+                                <a class="share-link share-link-facebook author-social-item" href="https://www.facebook.com/{{facebook}}" target="_blank" rel="noopener noreferrer">
+                                    {{> "icons/facebook"}}
+                                    Facebook
+                                </a>
+                            {{/if}}
+                            {{#if twitter}}
+                                <a class="share-link share-link-twitter author-social-item" href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener noreferrer">
+                                    {{> "icons/twitter"}}
+                                    Twitter
+                                </a>
+                            {{/if}}
+                        </div>
                     </div>
-                {{/if}}
-            </div>
+                    {{/foreach}}
+                </div>
+            {{/if}}
         </footer>
     </div>
     {{/is}}

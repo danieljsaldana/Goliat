@@ -29,7 +29,7 @@
     height: 18px;
     margin-right: 10px;
     vertical-align: middle;
-    color: var(--secondary-text-color);
+    color: var(--secondary-text-color);    
 }
 
 .single-meta-tag .post-tag {
@@ -85,6 +85,36 @@
     letter-spacing: -0.02rem;
 }
 
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    overflow: hidden;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  
+  .reading-progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  
+  .reading-progress::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--primary-text-color), var(--ghost-accent-color));
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.2s ease-out;
+  }
+  
+  .reading-progress::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--primary-text-color), var(--ghost-accent-color));
+    border-radius: 3px;
+  }
+  
 @media (max-width: 767px) {
     .single-header {
         margin-bottom: 3rem;
