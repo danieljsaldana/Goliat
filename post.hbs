@@ -1,7 +1,8 @@
 {{!< default}}
 
-<main class="site-main">
+{{> "progress-bar"}}
 
+<main class="site-main">
     {{#post}}
         {{> "content" width="wide"}}
     {{/post}}
@@ -13,5 +14,4 @@
     {{#post}}
         {{> "comments"}}
     {{/post}}
-
 </main>

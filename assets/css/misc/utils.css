@@ -86,8 +86,7 @@
 }
 
 .single-footer {
-    margin-top: 20px;
-    padding-top: 20px;
+    padding-top: 30px;
     border-top: 1px dashed var(--light-gray-color);
 }
 
@@ -96,9 +95,9 @@
 }
 
 .single-footer-top {
-    padding: 20px;
+    padding: 25px;
     background-color: var(--lighter-gray-color);
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .single-footer-title {
@@ -191,8 +190,8 @@
 }
 
 .gh-readmore-thumb {
-    width: 90px; 
-    height: 90px; 
+    width: 100px; 
+    height: 100px; 
     flex-shrink: 0; 
     border-radius: 10px; 
     object-fit: cover;
@@ -201,7 +200,7 @@
 }
 
 .gh-readmore-title-left {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1.4;
     margin-left: 10px;
@@ -211,7 +210,7 @@
 }
 
 .gh-readmore-title-right {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1.4;
     margin-right: 10px;

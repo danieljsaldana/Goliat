@@ -23,11 +23,19 @@
     height: 14px;
 }
 
+.share-link .icon-website {
+  margin-right: 5px;
+}
+
 .share-link .icon-facebook {
     margin-right: 5px;
 }
 
 .share-link .icon-twitter {
+    margin-right: 5px;
+}
+
+.share-link .icon-linkedin {
     margin-right: 5px;
 }
 
@@ -37,4 +45,36 @@
 
 .share-link-twitter {
     background-color: rgba(0,0,0,.5);
+}
+
+
+.single-share {
+  margin: 2rem 0;
+}
+
+.share-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.share-text {
+  font-size: 16px;
+  color: var(--secondary-text-color);
+}
+
+.share-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.share-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: var(--primary-color);
+  fill: currentColor;
 }
