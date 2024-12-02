@@ -6,13 +6,33 @@ on:
       - main
       
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  validate:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install GScan
+        run: npm install -g gscan
+
+      - name: Validate Theme with GScan
+        run: gscan . --verbose
+
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: validate
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          
