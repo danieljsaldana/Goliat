@@ -171,6 +171,39 @@
     text-decoration: none;
 }
 
+.gh-single-share {
+    margin: 2rem 0;
+  }
+
+.gh-share-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.gh-share-text {
+  font-size: 16px;
+  color: var(--secondary-text-color);
+  font-weight: 700;
+}
+
+.gh-share-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.gh-share-icon a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: var(--primary-color);
+  fill: currentColor;
+}
+
 .gh-readmore-link {
     display: flex;
     align-items: center;

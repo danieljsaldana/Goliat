@@ -62,34 +62,34 @@
         {{content}}
     </div>
 
-    <div class="single-share gh-canvas">
-        <div class="share-container">
-            <p class="share-text">{{ t "Share this post"}}:</p>
-            <div class="share-buttons">
+    <div class="gh-canvas">
+        <div class="gh-share-container">
+            <p class="gh-share-text">{{ t "Share this post"}}:</p>
+            <div class="gh-share-buttons">
                 <a href="https://twitter.com/share?url={{url absolute="true"}}&text={{title}}" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="share-icon share-twitter" 
+                class="gh-share-icon" 
                 aria-label="Share on Twitter">
                     {{> "icons/twitter"}}
                 </a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="share-icon share-facebook" 
+                class="gh-share-icon" 
                 aria-label="Share on Facebook">
                     {{> "icons/facebook"}}
                 </a>
                 <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{title}}" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                class="share-icon share-linkedin" 
+                class="gh-share-icon" 
                 aria-label="Share on LinkedIn">
                     {{> "icons/linkedin"}}
                 </a>
             </div>
         </div>
-    </div>
+    </div>        
 
     {{#is "post"}}
 
