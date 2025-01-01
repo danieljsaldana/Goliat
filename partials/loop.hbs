@@ -18,7 +18,10 @@
             {{/if}}
                 {{#unless access}}
                     {{> "icons/lock"}}
-                {{/unless}}            
+                {{/unless}}           
+            <time datetime="{{date format='YYYY-MM-DD'}}">
+                {{date published_at format="DD MMM YYYY"}}
+            </time>                 
             {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
         </div>
     </div>
