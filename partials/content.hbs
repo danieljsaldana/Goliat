@@ -8,7 +8,7 @@
                 <div class="single-meta-item single-meta-date">
                     {{> "icons/calendar"}}
                     <time datetime="{{date format='YYYY-MM-DD'}}">
-                        {{date published_at}}
+                        {{date published_at format="DD MMM YYYY"}}
                     </time>
                 </div>
                 {{#if reading_time}}
