@@ -98,6 +98,7 @@
     padding: 25px;
     background-color: var(--lighter-gray-color);
     border-radius: 10px;
+    border: 1px solid var(--light-gray-color);    
 }
 
 .single-footer-title {

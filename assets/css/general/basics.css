@@ -39,6 +39,17 @@ a {
     color: var(--darker-gray-color);
 }
 
+pre {
+    background-color: var(--lighter-gray-color);
+    border-radius: 10px;
+    border: 1px solid var(--light-gray-color);    
+}
+
+:not(pre)>code {
+    background-color: var(--lighter-gray-color);
+    border: 1px solid var(--light-gray-color);
+}
+
 h1,
 h2,
 h3,
