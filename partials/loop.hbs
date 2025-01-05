@@ -18,7 +18,10 @@
             {{/if}}
                 {{#unless access}}
                     {{> "icons/lock"}}
-                {{/unless}}           
+                {{/unless}}     
+                {{#if featured}}
+                    {{> "icons/star"}}
+                {{/if}}
             <time datetime="{{date format='YYYY-MM-DD'}}">
                 {{date published_at format="DD MMM YYYY"}}
             </time>                 
